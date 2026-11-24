@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1220"><meta name="description" content="Learn and practice Python from beginner to intermediate with interactive lessons and a free in-browser Python interpreter.">
+  <title>Python Learning Lab</title><link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-icon">Py</div><div><strong>Python Learning Lab</strong><small>Beginner to Intermediate</small></div></div>
+    <div class="course-progress"><div class="progress-label"><span>Course progress</span><b id="progressText">0%</b></div><div class="progress-track"><span id="progressBar"></span></div><small id="completedText">0 of 50 lessons completed</small></div>
+    <div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Find a lesson..."></div>
+    <nav id="lessonNav" aria-label="Course lessons"></nav>
+    <div class="sidebar-foot"><span class="live-dot"></span> Free browser-based Python runtime</div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar"><button class="icon-btn menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button><div class="crumb">LEARNING PATH <span>/</span> <b id="crumbTitle">Python Basics</b></div><div class="runtime-status" id="runtimeStatus"><i></i><span>Interpreter not loaded</span></div></header>
+    <section class="welcome-strip"><div><div class="eyebrow">YOUR INTERACTIVE CLASSROOM</div><h1>Learn Python by <em>doing.</em></h1><p>Read the lesson, experiment with the examples, then solve the exercises in the same workspace.</p></div><div class="hero-mark">{ }</div></section>
+    <div class="content-layout">
+      <article class="lesson-panel">
+        <div class="lesson-meta"><span class="pill" id="sectionPill">PART A</span><span id="lessonCount">LESSON 1 OF 50</span></div>
+        <div class="lesson-heading"><div><h2 id="lessonTitle">Python Introduction</h2><p id="lessonSubtitle">Start with the fundamentals of Python programming.</p></div><button id="completeBtn" class="complete-btn">✓ Mark complete</button></div>
+        <div id="lessonContent" class="lesson-content"></div>
+        <div class="lesson-navigation"><button id="prevBtn" class="secondary-btn">← Previous</button><button id="nextBtn" class="primary-btn">Next lesson →</button></div>
+      </article>
+      <aside class="right-rail">
+        <div class="rail-card runtime-card"><div class="rail-icon">⌘</div><h3>Python interpreter</h3><p>Run Python directly in your browser. Your code executes on your device.</p><div class="runtime-detail"><span class="live-dot"></span><span id="runtimeDetail">Ready to initialize</span></div><button id="loadRuntimeBtn" class="secondary-btn full-btn">Load Python runtime</button></div>
+        <div class="rail-card"><div class="rail-icon gold">✦</div><h3>Learning tip</h3><p>Don't just read the examples. Change a value, run the code again, and observe what happens.</p></div>
+        <div class="rail-card keyboard-card"><h3>Quick keys</h3><div><kbd>Run</kbd><span>Execute code</span></div><div><kbd>Ctrl</kbd> + <kbd>Enter</kbd><span>Run focused editor</span></div></div>
+      </aside>
+    </div>
+    <footer class="footer">Python Learning Lab <span>•</span> Course content adapted from your supplied Jupyter Notebook</footer>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body></html>
